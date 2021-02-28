@@ -4,19 +4,18 @@ class Book
 {
 
     private string $name;
-    private string $mode;
-    private string $author;
+    /*private string $mode; clé étrangère*/
+    private int $author_id; //clé étrangère
     private string $date;
-    private float $price;
+/*    private float $price; dans la table exemplaire*/
 
 
-    public function __construct(string $name, string $mode, string $author, string $date, float $price)
+    public function __construct(string $name, int $author_id, string $date)
     {
         $this->name = $name;
-        $this->mode = $mode;
-        $this->author = $author;
+        $this->author_id = $author_id;
         $this->date = $date;
-        $this->price = $price;
+
 
     }
 
@@ -28,20 +27,13 @@ class Book
         return $this->name;
     }
 
-    /**
-     * @return string
-     */
-    public function getMode(): string
-    {
-        return $this->mode;
-    }
 
     /**
      * @return string
      */
-    public function getAuthor(): string
+    public function getAuthor_id(): int
     {
-        return $this->author;
+        return $this->author_id;
     }
 
     /**
@@ -50,14 +42,6 @@ class Book
     public function getDate(): string
     {
         return $this->date;
-    }
-
-    /**
-     * @return float
-     */
-    public function getPrice(): float
-    {
-        return $this->price;
     }
 
 }

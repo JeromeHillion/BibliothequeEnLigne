@@ -1,10 +1,8 @@
 <?php
 
-include_once './Controller/mainController.php';
+require './Controller/mainController.php';
 
 $books = booklist();
-$book;
-
 
 require './Vue/index.phtml';
 

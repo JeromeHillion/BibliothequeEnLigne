@@ -5,20 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Vue/css/style.css">
     <title>Acceuil ma bibliothèque en ligne</title>
 </head>
 <body>
 <table>
   <tr>
     <td>Nom</td>
-    <td>Mode de reliure</td>
     <td>Auteur</td>
     <td>Date</td>
     <td>prix</td>
   </tr>
-  <tr>
-     <td><?= print_r($books)?></td>
-  </tr>
+
+<?php foreach ($books as $book){
+    echo'<tr>';
+        echo '<td>'.$book->getName().'</td>';
+        echo '<td>'.$book->getAuthor().'</td>';
+        echo '<td>'.$book->getDate().'</td>';
+        echo '<td>'.$book->getPrice().' €</td>';
+    echo'</tr>';
+
+  }?>
+
 </table>
 </body>
 </html>
